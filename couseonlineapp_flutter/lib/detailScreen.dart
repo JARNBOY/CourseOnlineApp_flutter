@@ -23,7 +23,12 @@ class DetailScreen extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      SvgPicture.asset("assets/icons/arrow-left.svg"),
+                      IconButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        icon: SvgPicture.asset("assets/icons/arrow-left.svg"),
+                      ),
                       SvgPicture.asset("assets/icons/more-vertical.svg")
                     ],
                   ),

@@ -1,4 +1,5 @@
 import 'package:couseonlineapp_flutter/constants.dart';
+import 'package:couseonlineapp_flutter/detailScreen.dart';
 import 'package:couseonlineapp_flutter/model/category.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -75,18 +76,27 @@ class HomeScreen extends StatelessWidget {
                         image: DecorationImage(
                             image: AssetImage(categories[index].image),
                             fit: BoxFit.fill)),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        Text(
-                          categories[index].name,
-                          style: kTitleTextStyle,
-                        ),
-                        Text(
-                          '${categories[index].numOfCourse} Courses',
-                          style: TextStyle(color: kTextColor.withOpacity(.5)),
-                        )
-                      ],
+                    child: FlatButton(
+                      onPressed: () {
+                        print("Show Add");
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
+                          return DetailScreen();
+                        }));
+                      },
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Text(
+                            categories[index].name,
+                            style: kTitleTextStyle,
+                          ),
+                          Text(
+                            '${categories[index].numOfCourse} Courses',
+                            style: TextStyle(color: kTextColor.withOpacity(.5)),
+                          )
+                        ],
+                      ),
                     ),
                   );
                 },
