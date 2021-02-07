@@ -1,4 +1,5 @@
-import 'package:couseonlineapp_flutter/homeScreen.dart';
+import 'package:couseonlineapp_flutter/detailScreen.dart';
+// import 'package:couseonlineapp_flutter/homeScreen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Course Online App',
       theme: ThemeData(),
-      home: HomeScreen(),
+      home: DetailScreen(),
     );
   }
 }
