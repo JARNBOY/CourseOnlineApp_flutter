@@ -87,7 +87,36 @@ class DetailScreen extends StatelessWidget {
                     children: <Widget>[
                       Text("Course Content", style: kTitleTextStyle),
                       SizedBox(height: 30),
-                      CourseContent(),
+                      CourseContent(
+                        number: "01",
+                        duration: 5.35,
+                        title: "WelCome To the Course",
+                        isDone: true,
+                      ),
+                      CourseContent(
+                        number: "02",
+                        duration: 6.35,
+                        title: "Design Thinking - Intro",
+                        isDone: true,
+                      ),
+                      CourseContent(
+                        number: "03",
+                        duration: 7.35,
+                        title: "Design Thinking Process",
+                        isDone: false,
+                      ),
+                      CourseContent(
+                        number: "04",
+                        duration: 8.35,
+                        title: "Customer Perspective",
+                        isDone: false,
+                      ),
+                      CourseContent(
+                        number: "05",
+                        duration: 9.35,
+                        title: "Design Thinking Bonus",
+                        isDone: false,
+                      )
                     ],
                   ),
                 ),
@@ -111,41 +140,46 @@ class CourseContent extends StatelessWidget {
     this.number,
     this.duration,
     this.title,
-    this.isDone,
+    this.isDone = false,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: <Widget>[
-        Text("01",
-            style: kHeadingextStyle.copyWith(
-                color: kTextColor.withOpacity(.15), fontSize: 32)),
-        SizedBox(width: 20),
-        RichText(
-          text: TextSpan(children: [
-            TextSpan(
-                text: "5.35 mins\n",
-                style:
-                    TextStyle(color: kTextColor.withOpacity(.5), fontSize: 18)),
-            TextSpan(
-                text: "Welcome to the Course",
-                style: kSubtitleTextSyule.copyWith(
-                    fontWeight: FontWeight.w600, height: 1.5))
-          ]),
-        ),
-        Spacer(),
-        Container(
-          margin: EdgeInsets.only(left: 20),
-          height: 40,
-          width: 40,
-          decoration: BoxDecoration(shape: BoxShape.circle, color: kGreenColor),
-          child: Icon(
-            Icons.play_arrow,
-            color: Colors.white,
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 30),
+      child: Row(
+        children: <Widget>[
+          Text(number,
+              style: kHeadingextStyle.copyWith(
+                  color: kTextColor.withOpacity(.15), fontSize: 32)),
+          SizedBox(width: 20),
+          RichText(
+            text: TextSpan(children: [
+              TextSpan(
+                  text: "$duration mins\n",
+                  style: TextStyle(
+                      color: kTextColor.withOpacity(.5), fontSize: 18)),
+              TextSpan(
+                  text: title,
+                  style: kSubtitleTextSyule.copyWith(
+                      fontWeight: FontWeight.w600, height: 1.5))
+            ]),
           ),
-        )
-      ],
+          Spacer(),
+          Container(
+            margin: EdgeInsets.only(left: 20),
+            height: 40,
+            width: 40,
+            decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: kGreenColor.withOpacity(isDone ? .5 : 1)),
+            child: Icon(
+              Icons.play_arrow,
+              color: Colors.white,
+            ),
+          )
+        ],
+      ),
     );
   }
 }
