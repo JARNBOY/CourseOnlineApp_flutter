@@ -44,7 +44,27 @@ class HomeScreen extends StatelessWidget {
             ),
             SizedBox(height: 30),
             Text("Hey JARNBOY,", style: kHeadingextStyle),
-            Text("Find a course you want to learn.", style: kSubheadingextStyle)
+            Text("Find a course you want to learn.",
+                style: kSubheadingextStyle),
+            Container(
+              margin: EdgeInsets.symmetric(vertical: 30),
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              height: 60,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                  color: Color(0xFFF5F5F7),
+                  borderRadius: BorderRadius.circular(40)),
+              child: Row(
+                children: <Widget>[
+                  SvgPicture.asset("assets/icons/search.svg"),
+                  SizedBox(width: 20),
+                  Text(
+                    "Search for Anything your course",
+                    style: TextStyle(fontSize: 18, color: Color(0xFFA0A5BD)),
+                  )
+                ],
+              ),
+            )
           ],
         ),
       ),
