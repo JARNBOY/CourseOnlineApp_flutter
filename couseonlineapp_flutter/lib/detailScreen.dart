@@ -80,45 +80,59 @@ class DetailScreen extends StatelessWidget {
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(50),
                     color: Colors.white),
-                child: Padding(
-                  padding: const EdgeInsets.all(30.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Text("Course Content", style: kTitleTextStyle),
-                      SizedBox(height: 30),
-                      CourseContent(
-                        number: "01",
-                        duration: 5.35,
-                        title: "WelCome To the Course",
-                        isDone: true,
+                child: Stack(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(30.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Text("Course Content", style: kTitleTextStyle),
+                          SizedBox(height: 30),
+                          CourseContent(
+                            number: "01",
+                            duration: 5.35,
+                            title: "WelCome To the Course",
+                            isDone: true,
+                          ),
+                          CourseContent(
+                            number: "02",
+                            duration: 6.35,
+                            title: "Design Thinking - Intro",
+                            isDone: true,
+                          ),
+                          CourseContent(
+                            number: "03",
+                            duration: 7.35,
+                            title: "Design Thinking Process",
+                            isDone: false,
+                          ),
+                          CourseContent(
+                            number: "04",
+                            duration: 8.35,
+                            title: "Customer Perspective",
+                            isDone: false,
+                          ),
+                          CourseContent(
+                            number: "05",
+                            duration: 9.35,
+                            title: "Design Thinking Bonus",
+                            isDone: false,
+                          )
+                        ],
                       ),
-                      CourseContent(
-                        number: "02",
-                        duration: 6.35,
-                        title: "Design Thinking - Intro",
-                        isDone: true,
+                    ),
+                    Positioned(
+                      right: 0,
+                      left: 0,
+                      bottom: 0,
+                      child: Container(
+                        height: 100,
+                        width: double.infinity,
+                        color: Colors.black,
                       ),
-                      CourseContent(
-                        number: "03",
-                        duration: 7.35,
-                        title: "Design Thinking Process",
-                        isDone: false,
-                      ),
-                      CourseContent(
-                        number: "04",
-                        duration: 8.35,
-                        title: "Customer Perspective",
-                        isDone: false,
-                      ),
-                      CourseContent(
-                        number: "05",
-                        duration: 9.35,
-                        title: "Design Thinking Bonus",
-                        isDone: false,
-                      )
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
             )
