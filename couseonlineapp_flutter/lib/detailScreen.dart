@@ -127,9 +127,49 @@ class DetailScreen extends StatelessWidget {
                       left: 0,
                       bottom: 0,
                       child: Container(
+                        padding: EdgeInsets.all(20),
                         height: 100,
                         width: double.infinity,
-                        color: Colors.black,
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(40),
+                            boxShadow: [
+                              BoxShadow(
+                                  offset: Offset(0, 4),
+                                  blurRadius: 50,
+                                  color: kTextColor.withOpacity(.1))
+                            ]),
+                        child: Row(
+                          children: <Widget>[
+                            Container(
+                                padding: EdgeInsets.all(14),
+                                height: 56,
+                                width: 80,
+                                decoration: BoxDecoration(
+                                    color: Color(0xFFFFEDEE),
+                                    borderRadius: BorderRadius.circular(40)),
+                                child: SvgPicture.asset(
+                                    "assets/icons/shopping-bag.svg")),
+                            SizedBox(width: 20),
+                            Expanded(
+                              child: Container(
+                                alignment: Alignment.center,
+                                padding: EdgeInsets.all(14),
+                                height: 56,
+                                width: 80,
+                                decoration: BoxDecoration(
+                                    color: kBlueColor,
+                                    borderRadius: BorderRadius.circular(40)),
+                                child: Text(
+                                  "Buy Now",
+                                  style: kSubtitleTextSyule.copyWith(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
                       ),
                     ),
                   ],
