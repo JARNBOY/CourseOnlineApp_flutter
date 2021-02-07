@@ -1,3 +1,4 @@
+import 'package:couseonlineapp_flutter/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -25,6 +26,7 @@ class HomeScreen extends StatelessWidget {
       body: Padding(
         padding: EdgeInsets.only(left: 20, top: 50, right: 20),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -39,7 +41,10 @@ class HomeScreen extends StatelessWidget {
                   ),
                 )
               ],
-            )
+            ),
+            SizedBox(height: 30),
+            Text("Hey JARNBOY,", style: kHeadingextStyle),
+            Text("Find a course you want to learn.", style: kSubheadingextStyle)
           ],
         ),
       ),
