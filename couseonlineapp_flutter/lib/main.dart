@@ -30,7 +30,14 @@ class HomeScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 SvgPicture.asset("assets/icons/menu.svg"),
-                Image.asset("assets/images/user.png")
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(30.0),
+                  child: Image.asset(
+                    "assets/images/user.jpg",
+                    width: 30,
+                    height: 30,
+                  ),
+                )
               ],
             )
           ],
