@@ -1,6 +1,7 @@
 import 'package:couseonlineapp_flutter/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 void main() {
   runApp(MyApp());
@@ -63,6 +64,30 @@ class HomeScreen extends StatelessWidget {
                     style: TextStyle(fontSize: 18, color: Color(0xFFA0A5BD)),
                   )
                 ],
+              ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Text("Category", style: kTitleTextStyle),
+                Text("See all",
+                    style: kSubtitleTextSyule.copyWith(color: kBlueColor))
+              ],
+            ),
+            SizedBox(height: 30),
+            Expanded(
+              child: StaggeredGridView.countBuilder(
+                crossAxisCount: 2,
+                itemCount: 5,
+                crossAxisSpacing: 16,
+                mainAxisSpacing: 16,
+                itemBuilder: (context, index) {
+                  return Container(
+                    height: 100,
+                    color: kBlueColor,
+                  );
+                },
+                staggeredTileBuilder: (index) => StaggeredTile.fit(1),
               ),
             )
           ],
