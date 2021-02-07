@@ -1,4 +1,5 @@
 import 'package:couseonlineapp_flutter/constants.dart';
+import 'package:couseonlineapp_flutter/model/category.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
@@ -78,13 +79,17 @@ class HomeScreen extends StatelessWidget {
             Expanded(
               child: StaggeredGridView.countBuilder(
                 crossAxisCount: 2,
-                itemCount: 5,
+                itemCount: categories.length,
                 crossAxisSpacing: 16,
                 mainAxisSpacing: 16,
                 itemBuilder: (context, index) {
                   return Container(
                     height: 100,
-                    color: kBlueColor,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(16),
+                        color: kBlueColor,
+                        image: DecorationImage(
+                            image: AssetImage(categories[index].image))),
                   );
                 },
                 staggeredTileBuilder: (index) => StaggeredTile.fit(1),
