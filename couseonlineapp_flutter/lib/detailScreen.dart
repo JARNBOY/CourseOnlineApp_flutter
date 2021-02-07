@@ -87,40 +87,7 @@ class DetailScreen extends StatelessWidget {
                     children: <Widget>[
                       Text("Course Content", style: kTitleTextStyle),
                       SizedBox(height: 30),
-                      Row(
-                        children: <Widget>[
-                          Text("01",
-                              style: kHeadingextStyle.copyWith(
-                                  color: kTextColor.withOpacity(.15),
-                                  fontSize: 32)),
-                          SizedBox(width: 20),
-                          RichText(
-                            text: TextSpan(children: [
-                              TextSpan(
-                                  text: "5.35 mins\n",
-                                  style: TextStyle(
-                                      color: kTextColor.withOpacity(.5),
-                                      fontSize: 18)),
-                              TextSpan(
-                                  text: "Welcome to the Course",
-                                  style: kSubtitleTextSyule.copyWith(
-                                      fontWeight: FontWeight.w600, height: 1.5))
-                            ]),
-                          ),
-                          Spacer(),
-                          Container(
-                            margin: EdgeInsets.only(left: 20),
-                            height: 40,
-                            width: 40,
-                            decoration: BoxDecoration(
-                                shape: BoxShape.circle, color: kGreenColor),
-                            child: Icon(
-                              Icons.play_arrow,
-                              color: Colors.white,
-                            ),
-                          )
-                        ],
-                      ),
+                      CourseContent(),
                     ],
                   ),
                 ),
@@ -129,6 +96,56 @@ class DetailScreen extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+}
+
+class CourseContent extends StatelessWidget {
+  final String number;
+  final double duration;
+  final String title;
+  final bool isDone;
+
+  const CourseContent({
+    Key key,
+    this.number,
+    this.duration,
+    this.title,
+    this.isDone,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: <Widget>[
+        Text("01",
+            style: kHeadingextStyle.copyWith(
+                color: kTextColor.withOpacity(.15), fontSize: 32)),
+        SizedBox(width: 20),
+        RichText(
+          text: TextSpan(children: [
+            TextSpan(
+                text: "5.35 mins\n",
+                style:
+                    TextStyle(color: kTextColor.withOpacity(.5), fontSize: 18)),
+            TextSpan(
+                text: "Welcome to the Course",
+                style: kSubtitleTextSyule.copyWith(
+                    fontWeight: FontWeight.w600, height: 1.5))
+          ]),
+        ),
+        Spacer(),
+        Container(
+          margin: EdgeInsets.only(left: 20),
+          height: 40,
+          width: 40,
+          decoration: BoxDecoration(shape: BoxShape.circle, color: kGreenColor),
+          child: Icon(
+            Icons.play_arrow,
+            color: Colors.white,
+          ),
+        )
+      ],
     );
   }
 }
